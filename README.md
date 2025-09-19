@@ -28,23 +28,23 @@ admin.py
 
 
 from django.contrib import admin
-from .models import Movie,MovieAdmin
-admin.site.register(Movie,MovieAdmin)
+from .models import car,carAdmin
+admin.site.register(car,carAdmin)
 
 
 models.py
 
 from django.db import models
 from django.contrib import admin
-class Movie(models.Model):
+class car(models.Model):
     mid=models.IntegerField()
     mname=models.CharField(max_length=100)
-    collection=models.IntegerField()
+    price=models.IntegerField()
     year=models.IntegerField()
-    rating=models.FloatField()
+    horsepower=models.FloatField()
 
-class MovieAdmin(admin.ModelAdmin):
-    list_display=('mid','mname','collection','year','rating')
+class carAdmin(admin.ModelAdmin):
+    list_display=('cid','cname','price','year','horsepower')
 
 
 ~~~
